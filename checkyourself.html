@@ -1,0 +1,143 @@
+<html>
+	<head>
+		<title>
+			Search it out
+		</title>
+		<style type="text/css">
+			.btn{
+				width:70%;
+				height:10%;
+				color:white;
+				padding:2px;
+			}
+			.row{
+				width:100%;
+				height:50px
+				overflow:auto;
+			}
+			.left{
+				width:35%;
+				height:30px;
+				text-align:left;
+				padding:5px;
+				border:0px solid black;
+				float:left;
+				margin-left:5px;
+				margin-top:5px;
+				margin-right:5px;
+				margin-bottom:5px;
+				background:white;
+				text-align:center;
+			}
+			.right{
+				width:34%;
+				height:30px;
+				text-align:center;
+				padding:5px;
+				border:0px solid black;
+				float:left;		
+				margin-left:5px;
+				margin-top:5px;
+				margin-right:5px;
+				margin-bottom:5px;
+			}
+			.textField{
+				padding:5px;
+				width:300;
+			}
+			.outer{
+				width:99%;
+				height:600px;
+				overflow:auto;
+				border:0px solid white;
+				text-align:center;
+			}
+		</style>
+		
+		<script language="javascript">
+			function submit()
+			{
+				var a = document.getElementById("symptom");
+				var symptom = a.options[a.selectedIndex].text;
+				var b = document.getElementById("intensity");
+				var result = b.options[b.selectedIndex].text;
+				
+				var c="";
+				
+				if(a!=null||b!=null)
+				{	
+					alert(a);
+					alert(b);
+					c=c+a+b;
+					document.getElementById("text").value = c;
+				}
+				
+			}
+		
+		</script>
+	</head>
+	<body style="font-size:20px;background-color:#2a6aaf">
+		<div class="outer">
+		<div style="height:150px">
+				
+			</div>
+			<div class="row">
+				<div class="left">
+					Select appropriate symptoms to get accuracy in results
+				</div>
+				<div class="right">
+					
+						<select name="symptoms" style="font-size:20px;margin-top:5px;" id="symptom">
+							<option value="cough">cough</option>
+							<option value="running water from nose">running water from nose</option>
+							<option value="headache">headache</option>
+							<option value="body pain">body pain</option>
+							<option value="running water from eyes">running water from eyes</option>
+						</select>
+					
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="left">
+					select intensity 
+				</div>
+				<div class="right">
+
+						<select name="intensity"  style="font-size:20px;margin-top:5px;" id="intensity">
+							<option value="low">low</option>
+							<option value="normal">normal</option>
+							<option value="high">high</option>
+							<option value="severe">severe</option>
+						</select>
+
+				</div>
+			</div>
+			<div style="height:150px;">
+				
+			</div>
+			
+			<div class="btn"  style="text-align:center;">
+				<input type=button name="btn1" value="Submit" onClick="submit()" style="font-size:20px;background-color:#F0ED36">
+			</div>
+			
+			
+			<div class="row">
+				<div class="left">
+					Symptoms Given By You
+				</div>
+				<div class="right">
+					<textarea rows=5 cols=35  class="textField" id="text"> </textarea>
+				</div>
+			</div>
+			<div style="height:150px">
+				
+			</div>
+			
+			
+			<div class="btn"  style="text-align:center;">
+				<input type=button name="btn1" value="Confirm and Search" onClick="search()" style="font-size:20px;background-color:#F0ED36">
+			</div>
+		</div>	
+	</body>
+</html>

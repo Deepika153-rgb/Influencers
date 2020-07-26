@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="content-section">
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">FILL DATA</legend>
+                <div class="form-group">
+                    {{ form.username.label(class="form-control-label") }}
+
+                    {% if form.username.errors %}
+                        {{ form.username(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.username.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.username(class="form-control form-control-lg") }}
+                    {% endif %}
+                   
+                    </div>
+                    
+                      
+                <div class="form-group">
+                    {{ form.address.label(class="form-control-label") }}
+                   {% if form.address.errors %}
+                        {{ form.address(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.address.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                        {% else %}
+                            {{ form.address(class="form-control form-control-lg") }}
+                        {% endif %}
+                </div>
+                      
+                <div class="form-group">
+                    {{ form.Item.label(class="form-control-label") }}
+                    {% if form.Item.errors %}
+                        {{ form.Item(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.Item.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                        {% else %}
+                            {{ form.Item(class="form-control form-control-lg") }}
+                        {% endif %}
+                </div>
+               
+                      
+            </fieldset>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-outline-info") }}
+               
+            </div>
+
+        </form>
+        <div>
+        UPDATE DETAILS <a class="ml-2" href="{{ url_for('index') }}">UPDATE</a>
+        </div>
+    </div>
+    
+{% endblock content %}

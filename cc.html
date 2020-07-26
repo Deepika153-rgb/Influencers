@@ -1,0 +1,50 @@
+{%  extends "layout.html" %}
+{%  block content %}
+<header class="site-header">
+	<nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+<div class="collapse navbar-collapse" id="navbarToggle">
+	<div class="navbar-nav mr-auto">
+<a class="nav-item nav-link" href="/notification">Corona form</a>
+</div>
+</div>
+</nav>
+</header>
+    <div class="content-sections">
+		<form method="post" action="">
+			<fieldset class="form-group">
+				<div class="form-group">
+					<label for="symptoms">Select list:</label>
+					<select class="form-control" id="symptoms">
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+					</select>
+				</div>
+			<select name="symptoms" id="symptoms" style="width:150px;">
+				<option value="none">select symptom</option>
+				<option value="cough">cough</option>
+				<option value="cold">cold</option>
+				<option value="fever">fever</option>
+				<option value="headache">headache</option>
+				<option value="throat">do you feel soreness<br> in throat</option>
+				<option value="visit">have you visited to USA,<br> CHINA, JAPAN, ITALY, or<br> any country with large<br> number of corona positive<br> cases in last 14 days</option>
+				<option value="contact">have you came in contact<br> with any corona positive<br> person in last 14 days</option>
+			</select>
+			<br>
+			<select name="intensity" id="intensity"  >
+				<option value="none">select symptom</option>
+				<option value="low">low</option>
+				<option value="mild">mild</option>
+				<option value="normal">normal</option>
+				<option value="high">high</option>
+				<option value="very high">very high</option>
+			</select>
+			<br>
+			<input type="submit" value="check" onclick="fun()">
+			<br>
+			<textarea rows=5 cols=30   id="textarea"></textarea>
+		</form>	
+    </div>
+
+    {% endblock content %}
